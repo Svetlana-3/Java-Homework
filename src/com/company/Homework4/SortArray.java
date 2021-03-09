@@ -15,7 +15,7 @@ public class SortArray {
         Random rnd = new Random();
         int randomInt = rnd.nextInt(11) + 90; // 2) Masīvs tiek aizpildīts ar gadījuma skaitļiem(int) robežās no 10 līdz 99
         for (int i = 0; i < arr.length; i++)
-            arr[i] = (int) (Math.random() * randomInt);
+            arr[i] = (int) (Math.random() * randomInt); // Kā bez Math.random????
         //arr [i] = randomInt;
         for (int i : arr) {
             System.out.print(i + ", "); // 3) Izvadam uz ekrāna visus masīvā esošos skaitļus atdalītus ar komatu un atstarpi
