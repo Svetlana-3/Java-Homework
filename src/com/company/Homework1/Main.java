@@ -14,6 +14,6 @@ public class Main {
         double cen;
         cen = (5 * (far - 32))/9;
         System.out.println("Temperatūra Celsija grādos būs: " + cen);
-        System.out.println("Lai Tev laba diena!");
+        System.out.println("Lai Jums laba diena!");
     }
 }
