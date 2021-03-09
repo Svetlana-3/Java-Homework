@@ -5,40 +5,32 @@ import java.util.Scanner;
 
 public class SortArray {
     public static void main(String[] args) {
-        int n, arr[];
-        Scanner scanner = new Scanner(System.in);
+        int cip, arr[];
         System.out.println("Ievadi masīvu ar izmēru no 20 līdz 30: ");
-        n = scanner.nextInt();
-        arr = new int[n];
+        Scanner scanner = new Scanner(System.in);
+        cip = scanner.nextInt();
+        arr = new int[cip];
+        scanner.close();
 
         Random rnd = new Random();
-        int randomInt = rnd.nextInt(11) + 90;
-
+        int randomInt = rnd.nextInt(11) + 90; // 2) Masīvs tiek aizpildīts ar gadījuma skaitļiem(int) robežās no 10 līdz 99
         for (int i = 0; i < arr.length; i++)
             arr[i] = (int) (Math.random() * randomInt);
-        for (int i : arr)
-            System.out.print(i + ", ");
-
-            /*4) Veicam masīvā esošo elementu kārtošanu augošā secībā (neveidojam jaunu masīvu)
-              5) Izvadam uz ekrāna sakārtotos masīva elementus
-              ** Uzdevumu izpildīšanai neizmantojiet Arrays klases iebūvētās metodes masīva elementu kārtošanai !
-              HINTS:
-                Masīvus var kārtot izmantojot dažādus jau zināmus kārtošanas algoritmus.*/
-
-        // Kā izdarīt, lai programma ņemtu izvadīto masīvu?
-
-        int [] arr;
-        //int temp;
-        //int n = array.length;
-        for (int i = 0; i < arr.length - 1; i++)
+        //arr [i] = randomInt;
+        for (int i : arr) {
+            System.out.print(i + ", "); // 3) Izvadam uz ekrāna visus masīvā esošos skaitļus atdalītus ar komatu un atstarpi
+        }
+        // otrā daļa
+        for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1 - i; j++)
                 if (arr[j] > arr[j + 1]) {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
+                    arr[j + 1] = temp; // 4) Veicam masīvā esošo elementu kārtošanu augošā secībā (neveidojam jaunu masīvu)
                 }
+        }
         for (int i = 0; i < arr.length; ++i) {
-            System.out.println(arr[i]);
+            System.out.println(arr[i]); // 5) Izvadam uz ekrāna sakārtotos masīva elementus
         }
     }
-    }
+}
