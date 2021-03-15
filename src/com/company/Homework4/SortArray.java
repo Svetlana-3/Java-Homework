@@ -23,13 +23,13 @@ public class SortArray {
             System.out.print(arr[i] + ", ");
         }
 
-        // otrā daļa
+        // otrā daļa       4) Veicam masīvā esošo elementu kārtošanu augošā secībā (neveidojam jaunu masīvu)
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1 - i; j++)
-                if (arr[j] > arr[j + 1]) {
-                    int temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp; // 4) Veicam masīvā esošo elementu kārtošanu augošā secībā (neveidojam jaunu masīvu)
+                if (arr[j] > arr[j + 1]) {  // применяем метод Bubble sort
+                    int temp = arr[j];     // вводим новую переменную temp, чтобы поменять местами переменные,
+                    arr[j] = arr[j + 1];   // ...если первая больше второй
+                    arr[j + 1] = temp;       // заменяем первую переменную на вторую
                 }
         }
         for (int i = 0; i < arr.length; ++i) {
