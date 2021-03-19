@@ -36,23 +36,27 @@ public class Matrices {
                 }
                 System.out.println();
             }
+            //6) Masīvs A tiek izvadīts diagonāli:
+
+            System.out.println("Diagonāles matrica: ");
             //6) Masīvs tiek izvadīts diagonāli:
-            for (int i = 0; i < masiv2d.length; i++) {
-                for (int j = 0; j < masiv2d[i].length; j++) {
-                    if (i != j) {
-                        masiv2d[i][j] = 0;
-                        for (int[] row : masiv2d) {
-                            for (int column : row) {
-                                System.out.printf("%4d ", column); // Izvadam uz print
-                            }
-                            System.out.println();
-                            //break;
-                        }
-                    }
+            for (int i = 0; i < numberN; i++) {
+                for (int j = 0; j < numberN; j++)
+                    masiv2d[i][j] = (i == j) ? masiv2d[i][j] : 0;
+                continue;
+            }
+
+            //masiv2d[i][j] = 0;
+            for (int i = 0; i < numberN; i++) {
+                for (int j = 0; j < numberN; j++) {
+                    System.out.printf("%4d ", masiv2d[i][j]); // Izvadam uz print
                 }
+                System.out.println();
             }
         }
-        //6) Masīvs tiek izvadīts diagonāli:
+
+
+        //6) Masīvs B tiek izvadīts diagonāli:
 
         if (a.equals("B")) {
             Random random = new Random();
@@ -67,23 +71,23 @@ public class Matrices {
                 }
                 System.out.println();
             }
+            System.out.println("Diagonāles matrica: ");
             //6) Masīvs tiek izvadīts diagonāli:
-            for (int i = 0; i < masiv2d.length; i++) {
-                for (int j = 0; j < masiv2d[i].length; j++) {
-                    if (i != j) {
-                        masiv2d[i][j] = 0;
-                        for (int[] row : masiv2d) {
-                            for (int column : row) {
-                                System.out.printf("%4d ", column); // Izvadam uz print
-                           }
-                            System.out.println();
-                        }
-                    }
+            for (int i = 0; i < numberN; i++) {
+                for (int j = 0; j < numberN; j++)
+                    masiv2d[i][j] = (i == j) ? masiv2d[i][j] : 0;
+                continue;
+            }
+
+            //masiv2d[i][j] = 0;
+            for (int i = 0; i < numberN; i++) {
+                for (int j = 0; j < numberN; j++) {
+                    System.out.printf("%4d ", masiv2d[i][j]); // Izvadam uz print
                 }
+                System.out.println();
             }
         }
-        //beigas for - if a.equals B
-            scanner.close();
     }
+
 }
 
