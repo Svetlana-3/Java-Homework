@@ -1,4 +1,5 @@
 package com.company.Homework5;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -54,9 +55,6 @@ public class Matrices {
                 System.out.println();
             }
         }
-
-
-        //6) Masīvs B tiek izvadīts diagonāli:
 
         if (a.equals("B")) {
             Random random = new Random();
