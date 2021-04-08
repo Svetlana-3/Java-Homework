@@ -3,6 +3,7 @@ package com.company.Homework6;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static com.company.Homework6.ToDoItem.completed;
 import static com.company.Homework6.ToDoItem.toDoTitle;
 
 public class ToDoItems {
@@ -26,10 +27,10 @@ public class ToDoItems {
 
         switch (title){
             case "1":
-                toDoItem.toDoTitle();
-                toDoItem.setPriority(PriorityEnum);
+                toDoTitle();
+                setPriority(PriorityEnum);
             case "2":
-                toDoItem.completed();
+                completed();
             case "3":
                 System.out.println("");
         }
