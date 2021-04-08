@@ -3,10 +3,8 @@ package com.company.Homework6;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static com.company.Homework6.ToDoItem.completed;
-import static com.company.Homework6.ToDoItem.toDoTitle;
-
-    public class Main {
+import static com.company.Homework6.ToDoItem.*;
+public class Main {
         public static void main(String[] args){
             System.out.println("Please name your To-Do List: ");
             Scanner scanner = new Scanner(System.in);
@@ -29,15 +27,22 @@ import static com.company.Homework6.ToDoItem.toDoTitle;
             switch (wish){
                 case "1":
                     toDoTitle();
-                    //PriorityEnum.getPriority(LOW);
+                    prioritySv();
+                    //exitList();
+                    //break;
+                    return;
                 case "2":
                     completed();
+                    return;
                 case "3":
                     System.out.println("uncompleted items vēl jāuztaisā");
+                    break;
                 case "q":
                     break;
             }
             scanner.close();
+            //return; //vienalga ar return programma finished
+
 
             //pēc lietas ievades:
         /*System.out.println("\nPress anything to continue or 'q' to stop adding items...");
