@@ -1,14 +1,25 @@
 package com.company.Homework6;
 
-import java.util.Scanner;
-
 public enum PriorityEnum {
     LOW,
     MEDIUM,
     HIGH;
 
-    public static PriorityEnum getPriority(int priority) {
-        Scanner scanner = new Scanner(System.in);
+    private String priority;
+
+    public String getPriority() {
+        return priority;
+    }
+
+    public void setPriority(String a) {
+        priority = a;
+        //System.out.println("Enter priority: HIGH, MEDIUM or LOW");
+    }
+}
+
+
+
+  /*      Scanner scanner = new Scanner(System.in);
         System.out.println("Enter priority:\n 1 - ja augsta prioritāte,\n 2 - ja vidēja prioritāte,\n 3 - ja zema prioritāte");
         priority = scanner.nextInt();
         scanner.close();
@@ -24,6 +35,6 @@ public enum PriorityEnum {
                 return LOW;
         }
         return HIGH;
-    }
-}
+    }*/
+
 
