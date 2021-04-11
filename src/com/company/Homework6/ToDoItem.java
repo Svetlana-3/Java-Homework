@@ -1,74 +1,79 @@
 package com.company.Homework6;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import static com.company.Homework6.PriorityEnum.*;
 
 public class ToDoItem {
+    //description: String
+    //priority: Priority
+    //completed: boolean
 
-    public static void toDoTitle() {
-        System.out.println("Enter title: ");
-        Scanner scanner3 = new Scanner(System.in);
-        String description = scanner3.nextLine();
+    //klases lauki:
+    private String description;
+    private String priority;
+    private boolean completed;
+
+    public String getDescription() {
+        return this.description;
     }
 
-    public static void prioritySv() {
-        System.out.println("Enter priotity: HIGH, MEDIUM or LOW");
-        Scanner scanner1 = new Scanner(System.in);
-        String priority = scanner1.nextLine();
-        scanner1.close();
+    public String setDescription() {
+        return this.description;
+    }
 
-        //PriorityEnum[] priorArray = PriorityEnum.values();
-        //PriorityEnum svarigums = priorArray[Integer.parseInt(priority)];
-        //PriorityEnum svarigums = priorArray[Integer.parseInt(priority)];
-        PriorityEnum svarigums = PriorityEnum.HIGH;
-        switch (svarigums) {
-            case HIGH:
-                break;
-            case MEDIUM:
-                break;
-            case LOW:
-                break;
+    public String getPriority() {
+        return this.priority;
+    }
+
+    public String setPriority() {
+        return this.priority;
+    }
+
+    public boolean getCompleted() {
+        return this.completed;
+    }
+
+    //klases metodes un konstruktori:
+
+    public ToDoItem(String description) {   //konstruktors
+        System.out.println("Enter title: ");
+        this.description = description;
+    }
+
+    public Enum getPriority(String priority) {
+        System.out.println("Enter priotity: HIGH, MEDIUM or LOW");
+        switch (priority.toUpperCase()) {
+            case "HIGH":
+                return HIGH;
+            case "MEDIUM":
+                return MEDIUM;
+            case "LOW":
+                return LOW;
             default:
                 System.out.println("Try again!");
         }
+        return HIGH;
     }
 
-    public static boolean completed() {
-        Scanner scanner2 = new Scanner(System.in);
-        String comp = scanner2.nextLine();
-        switch (comp) {
-            //toDoItem.add(completed());
-            case "completed":
-                System.out.println("Completed");
-            case "uncompleted":
-                System.out.println("Uncompleted");
-        }
-        return (completed());
-        //return toDoTitle();
+    public Enum setPriotity(String priority) {
+        return HIGH;
     }
 
-    public static void exitList() {
-        System.out.println("\nPress anything to continue or 'q' to stop adding items...");
-        Scanner scanner4 = new Scanner(System.in);
-        String userInput = scanner4.next();
-        if (userInput.equalsIgnoreCase("q")) {
-            //break;
-            System.out.println("EXIT");
-            /*} else {
-                System.out.println("vēl jāpierakstā kods");
-                //for (int i = 0; i < toDoItem.size(); i++) {
-            //System.out.println(toDoItem.get(i));
-            }*/
+    public boolean completed(String completed) {
+        System.out.println("Enter: completed or uncompleted");
+        if (completed == completed) {
+            return true;
+        } else {
+            return false;
         }
+
+    }
+
+    @Override
+    public String toString() {
+        return "ToDoItem{" +
+                "Enter title: '" + description +
+                "Enter priotity: HIGH, MEDIUM or LOW '" + priority +
+                "Enter: completed or uncompleted '" + completed +
+                "}";
     }
 }
-
-
-
-
-
-    /*
-         Scanner scanner = new Scanner(System.in);
-        String title = scanner.nextLine();
-        return getToDoItem();
-        */

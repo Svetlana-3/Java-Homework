@@ -5,43 +5,76 @@ import java.util.Scanner;
 
 import static com.company.Homework6.ToDoItem.*;
 public class Main {
-        public static void main(String[] args){
-            System.out.println("Please name your To-Do List: ");
-            Scanner scanner = new Scanner(System.in);
-            String title = scanner.nextLine();
 
-            ArrayList<String> toDoItem = new ArrayList<>();
-            toDoItem.add("1. Add To-Do Items");
-            toDoItem.add("2. Mark Task as comleted");
-            toDoItem.add("3. Display all To-Do Items");
-            toDoItem.add("4. Display uncompleted To-Do Items");
-            toDoItem.add("5. Display completed To-Do Items");
+    public static void main(String[] args) {
+        System.out.println("Please name your To-Do List: ");
+        Scanner scanner1 = new Scanner(System.in);
+        String titleName = scanner1.nextLine();
 
-            for (int i = 0; i < toDoItem.size(); i++) {
-                System.out.println(toDoItem.get(i));
-            }
+        ToDoItems t = new ToDoItems();
+        t.ToDoItems(titleName);
+        scanner1.close();
+    }
 
-            Scanner scanner1 = new Scanner(System.in);
-            String wish = scanner1.nextLine();
+    Scanner scanner2 = new Scanner(System.in);
+    int wish = scanner2.nextInt();
+    //ToDoItem it = new ToDoItem(wish); // ????
 
-            switch (wish){
-                case "1":
-                    toDoTitle();
-                    prioritySv();
-                    //exitList();
-                    //break;
-                    return;
-                case "2":
-                    completed();
-                    return;
-                case "3":
+    switch (wish) {
+        case 1:
+            ToDoItem it = new ToDoItem();
+            //System.out.println("Enter title: ");
+            Scanner scanner3 = new Scanner(System.in);
+            String itemName = scanner3.nextLine();
+
+            ToDoItem it = new ToDoItem();
+            it.ToDoItem(itemName);
+            scanner3.close();
+
+            Scanner scanner4 = new Scanner(System.in);
+            String prior = scanner4.nextLine();
+            PriorityEnum pr = new PriorityEnum();
+            pr.setPriority(prior);
+
+            //exitList();
+            //break;
+            //return;
+
+            case 2:
+                Completed completed = new Completed();
+                completed.setCompleted();
+
+                    //return;
+                /*case 3:
                     System.out.println("uncompleted items vēl jāuztaisā");
-                    break;
-                case "q":
-                    break;
+                    break;*/
+                //case q:
+                  //  break;
             }
-            scanner.close();
             //return; //vienalga ar return programma finished
+
+    }
+}
+
+
+
+
+
+            /*
+            public static void exitList() {
+        System.out.println("\nPress anything to continue or 'q' to stop adding items...");
+        Scanner scanner4 = new Scanner(System.in);
+        String userInput = scanner4.next();
+        if (userInput.equalsIgnoreCase("q")) {
+            //break;
+            System.out.println("EXIT");
+            /*} else {
+                System.out.println("vēl jāpierakstā kods");
+                //for (int i = 0; i < toDoItem.size(); i++) {
+            //System.out.println(toDoItem.get(i));
+            }*/
+
+
 
 
             //pēc lietas ievades:
@@ -54,5 +87,3 @@ public class Main {
             for (int i = 0; i < toDoItem.size(); i++) {
                 System.out.println(toDoItem.get(i));
             }*/
-        }
-    }
