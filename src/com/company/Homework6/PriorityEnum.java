@@ -5,17 +5,22 @@ public enum PriorityEnum {
     MEDIUM,
     HIGH;
 
+    private Enum priority;
 
 
-    /*private String priority;
-
-    public String getPriority() {
+    public Enum getPriority() {
         return priority;
     }
 
-    public void setPriority(String a) {
-        priority = a;
-    }*/
+    public void setPriority(PriorityEnum priority) {
+        this.priority = priority;
+        PriorityEnum c = PriorityEnum.valueOf(priority);
+        System.out.println(c);
+    }
+
+    private static PriorityEnum valueOf(PriorityEnum priority) {
+        return priority;
+    }
 }
 
 

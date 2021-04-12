@@ -14,10 +14,11 @@ public class ToDoItems {
 
     public String ToDoItems(String title) {
         //title = titleS;
-        System.out.println("Please name your To-Do List: ");
+        //System.out.println("Please name your To-Do List: ");
         return this.title;
     }
     public ToDoItems() {               //konstruktors
+        System.out.println("What do you wish to do?");
         ArrayList<String> toDoItems = new ArrayList<>();
         toDoItems.add("1. Add To-Do Items");
         toDoItems.add("2. Mark Task as comleted");
@@ -29,6 +30,7 @@ public class ToDoItems {
             System.out.println(toDoItems.get(i));
         }
     }
+
     public static String exitList(String input) {
         System.out.println("\nPress anything to continue or 'q' to stop adding items...");
         return input;

@@ -9,53 +9,42 @@ public class ToDoItem {
 
     //klases lauki:
     private String description;
-    private String priority;
+    //private enum priority;
     private boolean completed;
+    //private int wish;
 
     public String getDescription() {
-        return this.description;
+        return description;
+    }
+    public void setDescription() {
+        this.description = description;
     }
 
-    public String setDescription() {
-        return this.description;
-    }
-
-    public String getPriority() {
-        return this.priority;
-    }
-
-    public String setPriority() {
-        return this.priority;
-    }
+/*public enum getPriority(){
+    return priority;
+}
+public PriorityEnum(getPriority priority){
+        this.priority;
+}*/
 
     public boolean getCompleted() {
-        return this.completed;
+        return completed;
+    }
+
+    public void setDescription(boolean completed) {
+        this.completed = completed;
     }
 
     //klases metodes un konstruktori:
+    //priority Main klasē, jo šeit ar kļūdām, bet tur nav.
 
     public ToDoItem(String description) {   //konstruktors
         System.out.println("Enter title: ");
         this.description = description;
     }
 
-    public Enum getPriority(String priority) {
-        System.out.println("Enter priotity: HIGH, MEDIUM or LOW");
-        switch (priority.toUpperCase()) {
-            case "HIGH":
-                return HIGH;
-            case "MEDIUM":
-                return MEDIUM;
-            case "LOW":
-                return LOW;
-            default:
-                System.out.println("Try again!");
-        }
-        return HIGH;
-    }
-
-    public Enum setPriotity(String priority) {
-        return HIGH;
+    public void toDoItem(String description) {
+        this.description = description;
     }
 
     public boolean completed(String completed) {
@@ -72,8 +61,8 @@ public class ToDoItem {
     public String toString() {
         return "ToDoItem{" +
                 "Enter title: '" + description +
-                "Enter priotity: HIGH, MEDIUM or LOW '" + priority +
                 "Enter: completed or uncompleted '" + completed +
                 "}";
     }
+                //"Enter priotity: HIGH, MEDIUM or LOW '" + setPriority(Enum priority)
 }
