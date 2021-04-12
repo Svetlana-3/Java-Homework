@@ -13,12 +13,13 @@ public enum PriorityEnum {
     }
 
     public void setPriority(PriorityEnum priority) {
+        System.out.println("Enter priority (HIGH, MEDIUM or LOW): ");
         this.priority = priority;
         PriorityEnum c = PriorityEnum.valueOf(priority);
         System.out.println(c);
     }
 
-    private static PriorityEnum valueOf(PriorityEnum priority) {
+    static PriorityEnum valueOf(PriorityEnum priority) {
         return priority;
     }
 }

@@ -28,10 +28,13 @@ public class ToDoItems {
 
         for (int i = 0; i < toDoItems.size(); i++) {
             System.out.println(toDoItems.get(i));
+
         }
+        System.out.println(" ");
+        return;
     }
 
-    public static String exitList(String input) {
+    public String exitList(String input) {
         System.out.println("\nPress anything to continue or 'q' to stop adding items...");
         return input;
     }

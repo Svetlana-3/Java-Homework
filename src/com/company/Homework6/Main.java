@@ -20,16 +20,22 @@ public class Main {
 
         switch (wish) {
             case 1:
-                System.out.println("Enter title: ");
-            Scanner scanner3 = new Scanner(System.in);
-            String itemName = scanner3.nextLine();
-            ToDoItem it = new ToDoItem(itemName);
-            scanner3.close();
+                ToDoItem oneItem = new ToDoItem();
+                //oneItem.doOneItem();
+                Scanner scanner3 = new Scanner(System.in);
+                String itemName = scanner3.nextLine();
+                scanner3.close();
+                oneItem.setDescription(itemName);
+                Scanner scanner4 = new Scanner(System.in);
+                String priorityName = scanner4.next();
+                oneItem.setPriority((PriorityEnum) PriorityEnum.valueOf(priorityName));
+                scanner4.close();
 
-            Scanner scanner4 = new Scanner(System.in);
-            String prior = scanner4.nextLine();
-            PriorityEnum pr = PriorityEnum.HIGH;
-            pr.setPriority(PriorityEnum.HIGH);
+                ToDoItems exitToDo = new ToDoItems();
+                Scanner scanner5 = new Scanner(System.in);
+                String exitList = scanner5.nextLine();
+                exitToDo.exitList(exitList);
+                scanner5.close();
 
             //exitList();
             break;
