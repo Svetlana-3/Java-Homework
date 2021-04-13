@@ -1,7 +1,5 @@
 package com.company.Homework6;
 
-import static com.company.Homework6.PriorityEnum.*;
-
 public class ToDoItem {
     //description: String
     //priority: Priority
@@ -10,59 +8,64 @@ public class ToDoItem {
     //klases lauki:
     private String description;
     private Enum priority;
+    private String priorityWord;
     private boolean completed;
-    //private int wish;
 
     public String getDescription() {
         return description;
     }
-    public void setDescription() { this.description = description; }
 
-    public void setDescription(String description) {
-        System.out.println("Enter title: ");
+    public void setDescription() {
         this.description = description;
     }
-    /*public enum getPriority(){
-    return priority;
-}
-public PriorityEnum(getPriority priority){
-        this.priority;
-}*/
-//priority Main klasē, jo šeit ar kļūdām, bet tur nav.
-
+    public void setDescription(String description) {
+        System.out.print("Enter title: ");
+        this.description = description;
+    }
     public boolean getCompleted() {
         return completed;
     }
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
-    public void doOneItem(){
-        setDescription(description);
-        setPriority((PriorityEnum) priority);
+    public void setCompleted(){
+        this.completed=completed;
     }
 
+    //priority Main klasē, jo šeit ar kļūdām, bet tur nav.
 
     public Enum getPriority() {
         return priority;
     }
-    public void setPriority(PriorityEnum priority) {
-        System.out.println("Enter priority (HIGH, MEDIUM or LOW): ");
+
+
+    public String setPriority(PriorityEnum priority) {
+        System.out.print("Enter priority (HIGH, MEDIUM or LOW): ");
         this.priority = priority;
-        PriorityEnum c = PriorityEnum.valueOf(HIGH);
+        PriorityEnum c = PriorityEnum.valueOf(setPriority(priority));
         System.out.println(c);
+        return null;
     }
-    private static PriorityEnum valueOf(PriorityEnum priority) {
+    public void setPriority(){
+        this.priorityWord = priorityWord;
+    }
+
+    public void setPriority(String priorityWord) {
+        System.out.print("Enter priority (HIGH, MEDIUM or LOW): ");
+        this.priorityWord = priorityWord;
+    }
+    /*private static PriorityEnum valueOf(PriorityEnum priority) {
         return priority;
     }
+    */
 
-    /*public ToDoItem(String description) {   //konstruktors
-        System.out.println("Enter title: ");
-        this.description = description;
+    public ToDoItem() {
     }
-
-    public void toDoItem(String description) {
+    public ToDoItem(String description, String priorityWord, boolean completed){
         this.description = description;
-    }*/
+        this.priorityWord = priorityWord;
+        this.completed = completed;
+    }
 
     public boolean completed(String completed) {
         System.out.println("Enter: completed or uncompleted ");
@@ -74,18 +77,15 @@ public PriorityEnum(getPriority priority){
             return false;
         }
     }
-    public void main (String[] args){
-    System.out.println("Completed: " + completed);
+    public void markCompleted(){
+        this.completed = completed;
+        return;
     }
-
-
 
     @Override
     public String toString() {
-        return "ToDoItem{" +
-                "Enter title: '" + description +
-                "Completed: '" + completed +
-                "}";
+        return String.format( "Description: " + description +
+                        ", Priority: " + priorityWord +
+                ", Completed: " + completed);
     }
-                //"Enter priotity: HIGH, MEDIUM or LOW '" + setPriority(Enum priority)
 }

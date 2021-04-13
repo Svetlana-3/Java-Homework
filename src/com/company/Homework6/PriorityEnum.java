@@ -3,16 +3,15 @@ package com.company.Homework6;
 public enum PriorityEnum {
     LOW,
     MEDIUM,
-    HIGH;
+    HIGH
+}
 
-    private Enum priority;
+    //private Enum priority;
+    //public Enum getPriority() {
+    //    return priority;
 
 
-    public Enum getPriority() {
-        return priority;
-    }
-
-    public void setPriority(PriorityEnum priority) {
+    /*public void setPriority(PriorityEnum priority) {
         System.out.println("Enter priority (HIGH, MEDIUM or LOW): ");
         this.priority = priority;
         PriorityEnum c = PriorityEnum.valueOf(priority);
@@ -21,7 +20,7 @@ public enum PriorityEnum {
 
     static PriorityEnum valueOf(PriorityEnum priority) {
         return priority;
-    }
-}
+    }*/
+
 
 

@@ -1,10 +1,9 @@
 package com.company.Homework6;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-import static com.company.Homework6.ToDoItem.*;
 public class Main {
+
     public static void main(String[] args) {
         System.out.println("Please name your To-Do List: ");
         Scanner scanner1 = new Scanner(System.in);
@@ -12,86 +11,65 @@ public class Main {
 
         ToDoItems t = new ToDoItems();
         t.ToDoItems(titleName);
-        scanner1.close();
 
-        Scanner scanner2 = new Scanner(System.in);
-        int wish = scanner2.nextInt();
-        scanner2.close();
+        int wish = scanner1.nextInt();
 
         switch (wish) {
             case 1:
+              t.addItem();
+              t.ToDoItems(titleName);
+
                 ToDoItem oneItem = new ToDoItem();
-                //oneItem.doOneItem();
-                Scanner scanner3 = new Scanner(System.in);
-                String itemName = scanner3.nextLine();
-                scanner3.close();
+                String itemName = scanner1.nextLine();
                 oneItem.setDescription(itemName);
-                Scanner scanner4 = new Scanner(System.in);
-                String priorityName = scanner4.next();
-                oneItem.setPriority((PriorityEnum) PriorityEnum.valueOf(priorityName));
-                scanner4.close();
 
-                ToDoItems exitToDo = new ToDoItems();
-                Scanner scanner5 = new Scanner(System.in);
-                String exitList = scanner5.nextLine();
-                exitToDo.exitList(exitList);
-                scanner5.close();
+                String priorityName = scanner1.nextLine();
+                oneItem.setPriority(priorityName);
+                //oneItem.setPriority((PriorityEnum) PriorityEnum.valueOf(priorityName)); //nestrada šī metode
 
-            //exitList();
-            break;
-            //return;
+                String exitList = scanner1.nextLine();
+                t.exitList(exitList);
 
-        case 2:
-            System.out.println( "case2");
-            //Completed completed = new Completed();
-            //completed.setCompleted();
+                while (true) {
+                    String userInput = scanner1.nextLine();
+                    if (userInput.equalsIgnoreCase("q")) {
+                        break;
+                    } else {
+                        t.addItem();
+                        System.out.println(titleName);
+                        oneItem.setDescription(itemName);
+                        String itemName2 = scanner1.nextLine();
+                        oneItem.setPriority(priorityName);
+                        String priorityName2 = scanner1.nextLine();
+                        //System.out.println(oneItem);
+                    }
+                    //for (int i = 0; i < toDoItem.size(); i++) {
+                    //  System.out.println(toDoItem.get(i));
+                }
+                break;
 
-
-            //return;
-                /*case 3:
-                    System.out.println("uncompleted items vēl jāuztaisā");
-                    break;*/
-                //case q:
-                //  break;
+            case 2:
+                System.out.println("case2 Display items vēl jātaisā");
+                ToDoItem displayItems = new ToDoItem();
+                System.out.println(displayItems);
+                //Completed completed = new Completed();
+                //completed.setCompleted();
+                break;
+            case 3:
+                System.out.println("case 3 completed items vēl jāuztaisā");
+                break;
+            case 4:
+                System.out.println("case 4 uncompleted items vēl jāuztaisā");
+                break;
+            case 5:
+                System.out.println("case 5 mark Completion int.boolean vēl jāuztaisā");
+                break;
             default:
-                System.out.println("case3");
-
+                System.out.println("Try from 1 to 5!");
+                break;
         }
     }
 }
 
-            //return; //vienalga ar return programma finished
 
 
-
-
-
-
-
-            /*
-            public static void exitList() {
-        System.out.println("\nPress anything to continue or 'q' to stop adding items...");
-        Scanner scanner4 = new Scanner(System.in);
-        String userInput = scanner4.next();
-        if (userInput.equalsIgnoreCase("q")) {
-            //break;
-            System.out.println("EXIT");
-            /*} else {
-                System.out.println("vēl jāpierakstā kods");
-                //for (int i = 0; i < toDoItem.size(); i++) {
-            //System.out.println(toDoItem.get(i));
-            }*/
-
-
-
-
-            //pēc lietas ievades:
-        /*System.out.println("\nPress anything to continue or 'q' to stop adding items...");
-        while(true) {
-            String userInput = scanner.nextLine();
-            if (userInput.equalsIgnoreCase("q")) {
-                break;
-            }
-            for (int i = 0; i < toDoItem.size(); i++) {
-                System.out.println(toDoItem.get(i));
-            }*/

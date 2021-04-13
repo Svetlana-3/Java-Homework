@@ -1,23 +1,21 @@
 package com.company.Homework6;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ToDoItems {
-    //klases lauki:
-
     //title: String
     //toDoItems: List<ToDoItem>
     private String title;
-    //private List<ToDoItem>; //???kluda
+    private List<ToDoItem> toDoItems;
+    private ToDoItem toDoItem;
+
 
     //metodes un konstruktori:
-
     public String ToDoItems(String title) {
-        //title = titleS;
-        //System.out.println("Please name your To-Do List: ");
-        return this.title;
-    }
-    public ToDoItems() {               //konstruktors
+      return this.title; }
+
+    public ToDoItems() {       //konstruktors
         System.out.println("What do you wish to do?");
         ArrayList<String> toDoItems = new ArrayList<>();
         toDoItems.add("1. Add To-Do Items");
@@ -34,9 +32,21 @@ public class ToDoItems {
         return;
     }
 
-    public String exitList(String input) {
-        System.out.println("\nPress anything to continue or 'q' to stop adding items...");
-        return input;
+    public void displayItems(){
+        ToDoItem display = new ToDoItem();
+        //System.out.println("Description: " + display.setDescription() + "Priority: " + display.setPriority() + "Completed: " + display.setCompleted());
     }
-}
+
+    public void exitList(String input) {
+        System.out.println("\nPress anything to continue or 'q' to stop adding items...");
+        //return input;
+    }
+    public void addItem(){
+        int count=1;
+        //for(int i=0; i<1; i++) {
+            System.out.println("Adding item " + "#" + count + " to list ");
+        count++;
+    }
+    }
+
 
