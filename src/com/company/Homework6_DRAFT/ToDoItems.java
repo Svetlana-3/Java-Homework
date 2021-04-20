@@ -6,13 +6,23 @@ import java.util.List;
 import static com.company.Homework6_DRAFT.PriorityEnum.LOW;
 
 public class ToDoItems {
-    public String title;
-    List<ToDoItem> toDoItems;
+    private String title;
+    private List<ToDoItem> toDoItems;
 
-    List<ToDoItem> oneItem = new ArrayList<>();
-
-    ToDoItem one = new ToDoItem("", LOW, true);
-
+    public ToDoItems (String title, List<ToDoItem> toDoItems){
+        this.title = title;
+        this.toDoItems = toDoItems;
+    }
+    public String getTitle(){
+        return title;
+    }
+    public List<ToDoItem> toDoItems(){
+        return toDoItems;
+    }
+    @Override
+    public String toString(){
+        return String.format("Title: %s list: %s", title, toDoItems.toString());
+    }
 
     public void toDoList() {
         System.out.println("What do you wish to do?");
@@ -23,12 +33,13 @@ public class ToDoItems {
                 "5. Display completed To-Do Items");
     }
     // 1.
-    public void addItem() {
-        int count = 0;
-        System.out.println("Adding item " + "#" + count + " to list ");
+    public void addItem(ToDoItem item) {
+        toDoItems.add(item);
+        int count = 1;
+        System.out.println("Adding item " + "#" + count + " to list " + title);
         count++;
         //ToDoItem one = new ToDoItem(" ", LOW, true);
-        one.addToDoItem("", LOW, true);
+        //one.addToDoItem("", LOW, true);
         System.out.println("\nPress anything to continue or 'q' to stop adding items...");
     }
 

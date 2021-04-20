@@ -2,6 +2,8 @@ package com.company.Homework6_DRAFT;
 
 import com.company.Homework6.ToDoItem;
 import com.company.Homework6.ToDoItems;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -17,6 +19,7 @@ public class Main {
 
         switch (wish) {
             case 1:
+                int count=1;
                 t.addItem();
 
                 ToDoItem oneItem = new ToDoItem();
@@ -42,6 +45,8 @@ public class Main {
                         String priorityName2 = scanner1.nextLine();
                     }
                 }
+            case 2:
+                //ToDoItems saraksts2 = new ToDoItems(new List<ToDoItem>)
         }
     }
 }

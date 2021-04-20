@@ -26,10 +26,10 @@ public class ToDoItem {
         return priority;
     }
 
-    public void markCompleted(){
+    /*public void markCompleted(){
         this.completed = completed;
         return;
-    }
+    }*/
 
     /*private static PriorityEnum valueOf(PriorityEnum priority) {
         return priority;
